@@ -59,7 +59,12 @@ class UserController extends Controller
         
         return redirect()->route('users.index');
         
-        return view('users.edit', compact('user'));
-        dd($request->all());
+        $data = $request->only('name', 'email');
+        if ($request->passowd)
+            $data['password'] = bcrypt($request->password);
+       
+            $user->update($data);
+
+            return redirect()->route('users.index'); 
     }
 }

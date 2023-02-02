@@ -4,7 +4,7 @@
     
 
 @section('content')
-<h1>Editar o Usuariio {{$user->name }} </h1>
+<h1>Editar o Usuario {{$user->name }} </h1>
 
 @if($errors->any())
 <ul class="errors">
