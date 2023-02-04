@@ -40,7 +40,7 @@ class StoreUpadeteUserFormRequest extends FormRequest
         ]
                 ];
 
-          if ($this->method('PUT')){
+          if ($this->method('put') != $this->method('post') ){
             $rules['password'] = [
                 'nullable',
                 'min:6',

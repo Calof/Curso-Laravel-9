@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         
 
-        $users = User::where('name', 'LIKE', "%{$request->search}%")->get();
+        $users = User::where('name', 'like', "%{$request->search}%")->get();
        
 
         return view('users.index', compact('users'));
@@ -55,14 +55,14 @@ class UserController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(StoreUpadeteUserFormRequest $request, $id)
     {
         if(!$user = User::find($id))
         
         return redirect()->route('users.index');
         
         $data = $request->only('name', 'email');
-        if ($request->passowd)
+        if ($request->password)
             $data['password'] = bcrypt($request->password);
        
             $user->update($data);

@@ -6,11 +6,13 @@
 @section('content')
 <h1>Editar o Usuario {{$user->name }} </h1>
 
-@include('includes.validations.form')
+@include('users.includes.validations-form')
 
 <form action="{{route('user.update',$user->id)}}" method="post">
+    @method('PUT') 
     
-@method('PUT')
+      
+   
 @include('users.partials.form')
 </form>
 

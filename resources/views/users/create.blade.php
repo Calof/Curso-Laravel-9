@@ -7,8 +7,9 @@
 <h1>Novo usuario </h1>
 
 
-@include('includes.validations-form')
+@include('users.includes.validations-form')
 <form action="{{route('users.store')}}" method="post">
+    
 @csrf
 @include('users.partials.form')
 </form>
