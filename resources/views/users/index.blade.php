@@ -7,7 +7,7 @@
 </h1>
 <form action="{{route('users.index')}}" method="get" class="py-5">
 <input type="text" name="search" placeholder="Pesquisar" class="md:w-1/6 bg-gray-200 appearance-none">
-    <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline">Pesquisar</button>
+    <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline rounded-full text-white box-content h-2 w-17 p-5  " >Pesquisar</button>
 <ul>
     
     
@@ -42,10 +42,10 @@
             <td class="px-5 py-5 border-b border-gray-100">{{ $user->name }}</td>
             <td class="px-5 py-5 border-b border-gray-100">{{ $user->email }}</td>
             <td class="px-5 py-5 border-b border-gray-100">
-                <a href="{{ route('users.show', $user->id) }}">Detalhes</a>
+                <a href="{{ route('users.show', $user->id) }}" class="shadow bg-blue-300 hover:bg-blue-200 focus:shadow-outline rounded-full box-content h-32 w-32 p-4 ">Detalhes</a>
             </td>
             <td class="px-5 py-5 border-b border-gray-100">
-                <a href="{{ route('user.edit', $user->id) }}">Editar</a>
+                <a href="{{ route('user.edit', $user->id) }}" class="shadow bg-green-300 hover:bg-green-200 focus:shadow-outline rounded-full box-content h-32 w-32 p-4   " >Editar</a>
             </td>
         </tr>
         @endforeach
